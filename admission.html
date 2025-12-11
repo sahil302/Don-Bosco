@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions | Don Bosco Technical Institute Kalimpong</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #e6e6e6; color: #222; }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 14px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+    }
+
+    header h1 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    /* NAVIGATION */
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #333;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg,#607d8b,#90a4ae);
+      transition: 0.3s;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: #000; }
+
+    /* HAMBURGER ICON */
+    .menu-icon {
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* MOBILE NAVIGATION */
+    @media(max-width:768px){
+      .menu-icon { display: block; }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 8%;
+        background: #fff;
+        padding: 18px;
+        border-radius: 14px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      nav.active { display: flex !important; }
+    }
+
+    /* HERO SECTION */
+    .hero {
+      height: 55vh;
+      background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('media/6.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      color: #fff;
+      animation: zoomBg 20s infinite alternate;
+    }
+
+    @keyframes zoomBg {
+      0% { background-size: 100%; }
+      100% { background-size: 105%; }
+    }
+
+    .hero-content h2 {
+      font-size: 46px;
+      margin-bottom: 10px;
+    }
+
+    @media(max-width:768px){
+      .hero-content h2 { font-size: 32px; }
+    }
+
+    section {
+      padding: 70px 8%;
+      background: #fff;
+    }
+
+    section.light { background: #ededed; }
+
+    h3 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    /* DOWNLOAD BOX */
+    .download-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 28px;
+      background: #000;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    /* TABLE */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;        /* FIX FOR MOBILE */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      min-width: 720px;        /* ensures layout doesn't squish */
+    }
+
+    th, td {
+      padding: 16px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    th {
+      background: #607d8b;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    tr:hover { background: #f1f1f1; }
+
+    footer {
+      background: #222;
+      color: #eee;
+      padding: 40px 8%;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <div class="logo">
+    <img src="media/logo1.png" alt="School Logo">
+    <h1>Don Bosco Technical Institute</h1>
+  </div>
+
+  <nav>
+    <a href="./index.htm">Home</a>
+    <a href="./about.html">About</a>
+    <a href="./admission.html">Admissions</a>
+    <a href="./blog.html">Blog</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h2>Admissions 2025</h2>
+    <p>Start your technical journey with us today.</p>
+  </div>
+</div>
+
+<!-- DOWNLOAD ADMISSION FORM -->
+<section>
+  <h3>Download Admission Form</h3>
+
+  <div class="download-box">
+    <p>To apply for any trade at Don Bosco Technical Institute, Kalimpong:</p>
+    <p>1. Download the admission form.</p>
+    <p>2. Fill it carefully.</p>
+    <p>3. Submit it at the school office with required documents.</p>
+    <p>4. Admission is based on eligibility & availability.</p>
+
+    <a href="media/admissionform.pdf" class="download-btn" download>
+      Download Admission Form
+    </a>
+  </div>
+</section>
+
+<!-- FEES & DURATION TABLE -->
+<section class="light">
+  <h3>Course Duration & Fees</h3>
+
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>Trade</th>
+        <th>Duration</th>
+        <th>Fees</th>
+        <th>Placement Assistance</th>
+      </tr>
+
+      <tr>
+        <td>T.T.C Trade</td>
+        <td>12 Months</td>
+        <td>₹2000 / month + ₹2000 Admission Fee</td>
+        <td>Provided</td>
+      </tr>
+
+      <tr>
+        <td>IT Trade</td>
+        <td>12 Months</td>
+        <td>₹2000 / month + ₹2000 Admission Fee</td>
+        <td>Provided (for deserving candidates)</td>
+      </tr>
+
+      <tr>
+        <td>HMC Trade</td>
+        <td>3 Months</td>
+        <td>Included</td>
+        <td>100% Assistance + Internship</td>
+      </tr>
+
+      <tr>
+        <td>AMM Trade</td>
+        <td>—</td>
+        <td>Total: ₹16,000 (2 Installments)</td>
+        <td>100% Placement</td>
+      </tr>
+
+      <tr>
+        <td>Basic Computer Training</td>
+        <td>3 Months</td>
+        <td>₹2000 / month</td>
+        <td>Certificate + Free Counselling + Assistance</td>
+      </tr>
+
+      <tr>
+        <td>Driving School</td>
+        <td>6 Months</td>
+        <td>₹8000 Full Course</td>
+        <td>Placement Assistance</td>
+      </tr>
+    </table>
+  </div>
+
+  <br><br>
+  <center>
+    <a href="media/admissionform.pdf" class="download-btn" download>
+      Download Admission Form
+    </a>
+  </center>
+</section>
+
+<footer>
+  <p>© 2025 Don Bosco Technical Institute, Kalimpong | All Rights Reserved</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector("nav").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Don Bosco Technical Institute Kalimpong</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #e6e6e6; color: #222; }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 14px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { width: 46px; height: 46px; }
+
+    header h1 { font-size: 20px; font-weight: 600; }
+
+    /* NAVIGATION */
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #333;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 0; height: 2px;
+      background: linear-gradient(90deg,#607d8b,#90a4ae);
+      transition: 0.3s;
+    }
+    nav a:hover::after { width: 100%; }
+
+    /* HAMBURGER ICON */
+    .menu-icon {
+      font-size: 32px;
+      display: none;
+      cursor: pointer;
+    }
+
+    /* MOBILE NAV */
+    @media(max-width: 768px){
+      .menu-icon { display: block; }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 8%;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        gap: 18px;
+      }
+
+      nav.active { display: flex !important; }
+    }
+
+    /* HERO */
+    .hero {
+      height: 55vh;
+      background: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('media/5.jpeg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      animation: zoomHero 20s infinite alternate;
+    }
+
+    @keyframes zoomHero {
+      0% { background-size: 100%; }
+      100% { background-size: 105%; }
+    }
+
+    .hero-content h2 { font-size: 48px; margin-bottom: 10px; }
+
+    @media(max-width:768px){
+      .hero-content h2 { font-size: 34px; }
+    }
+
+    /* GENERAL SECTIONS */
+    section { padding: 70px 8%; background: #fff; }
+    section.light { background: #ededed; }
+
+    h3 {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      transition: 0.3s;
+    }
+
+    .card:hover { transform: translateY(-6px); }
+
+    /* CONTACT FORM */
+    .contact-form {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #bbb;
+      font-size: 15px;
+    }
+
+    .contact-btn {
+      padding: 12px 30px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: auto;
+      transition: 0.3s;
+    }
+
+    .contact-btn:hover { opacity: 0.85; }
+
+    /* MAP */
+    .map-box {
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 40px;
+      background: #222;
+      color: #eee;
+      padding: 40px 8%;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <div class="logo">
+    <img src="media/logo1.png" alt="School Logo">
+    <h1>Don Bosco Technical Institute</h1>
+  </div>
+
+  <nav>
+    <a href="./index.htm">Home</a>
+    <a href="./about.html">About</a>
+    <a href="./admission.html">Admissions</a>
+    <a href="./blog.html">Blog</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h2>Contact Us</h2>
+    <p>We're here to help you with admissions, courses and general inquiries.</p>
+  </div>
+</div>
+
+<!-- CONTACT DETAILS -->
+<section>
+  <h3>Get in Touch</h3>
+
+  <div class="grid">
+    <div class="card">
+      <h4>📍 Address</h4>
+      Don Bosco Technical Institute<br>
+      Kalimpong, West Bengal<br>
+      734301
+    </div>
+
+    <div class="card">
+      <h4>📞 Phone</h4>
+      +91 98765 43210<br>
+      +91 94340 12345
+    </div>
+
+    <div class="card">
+      <h4>📧 Email</h4>
+      dbtikalimpong@gmail.com<br>
+      info@donboscokalimpong.in
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="light">
+  <h3>Find Us on the Map</h3>
+
+  <div class="map-box">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d976.0870329824168!2d88.52813!3d27.08659!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e41ec5277f2565%3A0x31e03f0fda97c7ff!2sDon%20Bosco%20Technical%20School!5e0!3m2!1sen!2sin!4v1765288962907"
+      width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section>
+  <h3>Send Us a Message</h3>
+
+  <form class="contact-form" action="mailto:dbtikalimpong@gmail.com" method="POST" enctype="text/plain">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
+    <input type="text" name="Subject" placeholder="Subject">
+    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+
+    <button class="contact-btn">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Don Bosco Technical Institute, Kalimpong | All Rights Reserved</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector("nav").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

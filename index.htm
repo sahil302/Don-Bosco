@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Don Bosco Technical School | Kalimpong</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: #e6e6e6; color: #222; }
+
+    /* Modern Glass Header */
+      .trade-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #37474f;
+                    }
+
+.trade-card .syllabus {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+                      }
+
+.trade-card .syllabus li {
+  margin-bottom: 6px;
+            }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.75);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 14px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+    }
+
+    header h1 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      position: relative;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 6px 0;
+    }
+
+    /* Fancy Map Section */
+.map-section {
+  padding: 70px 8%;
+  background: #ededed;
+}
+
+.section-title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 45px;
+  animation: fadeDown 0.7s ease;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.map-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.map-card {
+  flex: 3;
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.18);
+  animation: fadeUp 0.8s ease;
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 420px;
+  border: none;
+}
+
+  .placement-glow {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.placement-glow img {
+  width: 220px; /* adjust size */
+  max-width: 90%;
+  animation: neonGlow 2.8s ease-in-out infinite alternate;
+}
+
+/* Glow Animation */
+@keyframes neonGlow {
+  0% {
+    filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.4))
+            drop-shadow(0 0 12px rgba(0, 255, 255, 0.3))
+            drop-shadow(0 0 20px rgba(0, 255, 255, 0.2));
+    transform: scale(1);
+  }
+  100% {
+    filter: drop-shadow(0 0 14px rgba(0, 255, 255, 0.8))
+            drop-shadow(0 0 28px rgba(0, 255, 255, 0.6))
+            drop-shadow(0 0 40px rgba(0, 255, 255, 0.4));
+    transform: scale(1.03);
+  }
+}
+
+
+.contact-card {
+  flex: 1.5;
+  padding: 25px;
+  background: #ffffffee;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: fadeUp 1s ease;
+}
+
+.contact-card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.direction-btn {
+  margin-top: 10px;
+  display: inline-block;
+  background: #607d8b;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.direction-btn:hover {
+  background: #455a64;
+  transform: translateY(-3px);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .map-wrapper {
+    flex-direction: column;
+  }
+  .map-card iframe {
+    height: 300px;
+  }
+}
+
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #607d8b, #90a4ae);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    /* Hero with Zoom Animation */
+    .hero { 
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+      url('media/6.jpg'); 
+      background-size: cover; 
+      background-position: center; 
+      height: 85vh; 
+      display: flex; 
+      align-items: center; 
+      padding: 0 8%; 
+      color: #fff; 
+      animation: zoomBg 20s infinite alternate;
+    }
+
+    @keyframes zoomBg {
+      0% { background-size: 100%; }
+      100% { background-size: 110%; }
+    }
+
+    .hero-content { max-width: 600px; }
+    .hero-content h2 { font-size: 48px; margin-bottom: 15px; }
+    .hero-content p { font-size: 18px; margin-bottom: 25px; line-height: 1.6; }
+    .hero-content button { padding: 12px 28px; background: #fff; border: none; border-radius: 30px; font-weight: 500; cursor: pointer; }
+
+    section { padding: 70px 8%; background: #fff; }
+    section.light { background: #ededed; }
+    section h3 { font-size: 32px; text-align: center; margin-bottom: 40px; }
+
+    /* Hero-adjacent About + Notice row */
+    .after-hero { padding: 40px 8% 20px; background: transparent; }
+    .after-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .about-snippet {
+      flex: 1;
+      padding-right: 12px;
+      font-size: 15px;
+    }
+    .about-snippet h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .about-snippet p {
+      margin-bottom: 6px;
+      line-height: 1.7;
+    }
+
+    .notice-panel {
+      width: 320px;
+      background: #f7f9fc;
+      border: 1px solid #b0bec5;
+      border-left: 5px solid #607d8b;
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+      padding: 16px 18px;
+      font-size: 13px;
+    }
+    .notice-panel-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .notice-panel-title { font-weight: 600; font-size: 14px; color: #37474f; }
+    .new-badge { font-size: 10px; padding: 2px 8px; border-radius: 999px; background: #ff5252; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; animation: pulseNew 1.2s infinite; }
+    @keyframes pulseNew { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.08); opacity: 0.7; } 100% { transform: scale(1); opacity: 1; } }
+    .notice-panel-section-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; opacity: 0.7; margin-top: 8px; margin-bottom: 4px; }
+    .notice-panel ul { list-style: none; margin: 0; padding: 0; }
+    .notice-panel li { margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .notice-dot { width: 6px; height: 6px; border-radius: 50%; background: #607d8b; }
+    .notice-link { font-size: 13px; text-decoration: none; color: #37474f; }
+    .notice-link:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .after-hero-inner { flex-direction: column; }
+      .notice-panel { width: 100%; max-width: 360px; }
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .gallery-img { width: 100%; height: 240px; object-fit: cover; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.4s; }
+    .gallery-img:hover { transform: scale(1.04); }
+    .card { background: #fff; padding: 25px; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); transition: 0.3s; }
+    .card:hover { transform: translateY(-6px); }
+
+    .courses ul { list-style: none; }
+    .courses li { padding: 10px 0; border-bottom: 1px solid #eee; }
+
+    /* Principal Section */
+    .principal-box { display: grid; grid-template-columns: 220px 1fr; gap: 30px; align-items: center; }
+    .principal-box img { width: 220px; height: 260px; object-fit: cover; border-radius: 16px; }
+
+    .cta { background: #d7d7d7; text-align: center; padding: 60px 8%; }
+    .cta h4 { font-size: 28px; margin-bottom: 15px; }
+    .cta button { padding: 12px 30px; border-radius: 30px; border: none; background: #000; color: #fff; font-size: 16px; cursor: pointer; }
+
+    footer { background: #222; color: #eee; padding: 40px 8%; text-align: center; }
+
+    /* Infrastructure Slider (3 at a time) */
+.infra-slider {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.infra-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+.infra-slide {
+  flex: 0 0 calc(100% / 3 - 14px);
+}
+
+.infra-slide img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.infra-name {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.infra-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.infra-btn.prev { left: -10px; }
+.infra-btn.next { right: -10px; }
+
+@media (max-width: 768px) {
+  .infra-slide { flex: 0 0 100%; }
+}
+
+
+    /* 360° Viewer */
+    .viewer-wrapper { max-width: 1100px; margin: auto; }
+    #viewer { width: 100%; height: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+
+    @media (max-width: 768px) {
+      .hero-content h2 { font-size: 34px; }
+      nav { display: none; }
+      .principal-box { grid-template-columns: 1fr; text-align: center; }
+      .principal-box img { margin: auto; }
+    }
+    .menu-icon {
+  font-size: 28px;
+  display: none;
+  cursor: pointer;
+}
+
+@media(max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 8%;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav.active {
+    display: flex !important;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+    <header>
+     <div class="menu-icon" onclick="toggleMenu()">☰</div>
+     <div class="logo">
+      <img src="media/logo1.png" alt="School Logo">
+      <h1>Don Bosco Technical Institute</h1>
+    </div>
+    <nav>
+      <a href="./index.htm">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./admission.html">Admissions</a>
+      <a href="./blog.html">Blog</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h2>Shaping Skilled Professionals</h2>
+      <p>Empowering youth through technical education, discipline, and values for a better future.</p>
+      <button>Explore Courses</button>
+    </div>
+  </div>
+
+
+
+  <section>
+    <h3>About Our School</h3>
+    <div class="grid">
+      <div class="card">Don Bosco Technical School, Kalimpong is committed to providing quality technical education with strong moral foundation.</div>
+      <div class="card">We focus on hands-on training, industry-ready skills, and character development.</div>
+      <div class="card">Our alumni are placed across top industries and organizations.</div>
+    </div>
+    <br><br>
+    <div class="grid">
+      <img src="media/3.jpeg" class="gallery-img" alt="Campus View">
+      <img src="media/5.jpeg" class="gallery-img" alt="Campus Grounds">
+      <img src="media/6.jpeg" class="gallery-img" alt="Main Building">
+    </div>
+  </section>
+
+  <section class="after-hero">
+    <div class="after-hero-inner">
+      <div class="about-snippet">
+        <h3>Don Bosco Technical institute, Kalimpong</h3>
+        <p>Don Bosco Technical School, Kalimpong is a Salesian institution dedicated to the education and skill development of young people, especially the less privileged.</p>
+        <p><strong>Established:</strong> Serving the youth of Kalimpong for several decades with a focus on technical training and character formation.</p>
+        <p><strong>Vision:</strong> To form honest citizens and skilled professionals rooted in values, discipline, and service.</p>
+      </div>
+      <div class="notice-panel">
+        <div class="notice-panel-header">
+          <div class="notice-panel-title">Notice & Important Links</div>
+          <div class="new-badge">New</div>
+        </div>
+        <div class="notice-panel-section">
+          <div class="notice-panel-section-title">Announcements</div>
+          <ul>
+            <li><span class="notice-dot"></span><span>Admissions Open 2025</span></li>
+            <li><span class="notice-dot"></span><span>New Electronics & Automobile Trades</span></li>
+          </ul>
+        </div>
+        <div class="notice-panel-section">
+          <div class="notice-panel-section-title">Important Links</div>
+          <ul>
+            <li><span class="notice-dot"></span><a href="#" class="notice-link">Admission Form</a></li>
+            <li><span class="notice-dot"></span><a href="#" class="notice-link">Prospectus</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light">
+    <h3>Message from the Principal</h3>
+    <div class="principal-box">
+      <img src="media/a93a2418-6fa3-4eb8-b6a6-535a7480406a.jpeg" alt="Principal">
+      <div>
+        <p><strong>Dear Students & Parents,</strong></p>
+        <p>It gives me immense pleasure to welcome you to Don Bosco Technical School, Kalimpong. Our mission is to nurture skilled, disciplined, and value-driven individuals who are ready to serve society with competence and integrity.</p>
+        <p>We believe in holistic education that combines technical excellence with character building.</p>
+        <br>
+        <p><strong>- Brother Roshan Ekka, </strong></p>
+        <p><strong>  Principal, Don Bosco Technical School</strong></p>
+      </div>
+    </div>
+  </section>
+
+<section>
+  <h3>Our Courses & Infrastructure</h3>
+
+  <div class="grid courses">
+
+    <!-- IT Trade -->
+    <div class="card trade-card">
+      <h4>IT Trade</h4>
+      <ul class="syllabus">
+        <li>Computer Fundamentals</li>
+        <li>Digital Electronics</li>
+        <li>MS Office & Documentation</li>
+        <li>Basic Networking and Web Development</li>
+        <li>Hardware Practice and Project</li>
+      </ul>
+    </div>
+
+    <!-- TTC -->
+    <div class="card trade-card">
+      <h4>Teacher's Training Trade (T.T.C)</h4>
+      <ul class="syllabus">
+        <li>Classroom Management</li>
+        <li>Teaching Methods</li>
+        <li>Child Development & Psychology</li>
+        <li>Student Evaluation</li>
+      </ul>
+    </div>
+
+    <!-- Automobile Management -->
+    <div class="card trade-card">
+      <h4>Automobile Management Trade</h4>
+      <ul class="syllabus">
+        <li>Vehicle Engine Basics</li>
+        <li>Servicing & Maintenance</li>
+        <li>Workshop Safety</li>
+        <li>Basic Electrical Diagnostics</li>
+      </ul>
+    </div>
+
+    <!-- Hotel Management -->
+    <div class="card trade-card">
+      <h4>Hotel Management Trade</h4>
+      <ul class="syllabus">
+        <li>Food Production and sevice</li>
+        <li>Housekeeping Operations</li>
+        <li>Front Office Management</li>
+        <li>Hospitality Etiquette</li>
+        <li>Practicals and Interview </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <br><br>
+  </div> <!-- end of trade cards -->
+
+  <div class="placement-glow">
+    <img src="media/Logo design for scho.png" alt="Placement Assistance">
+  </div>
+
+<br><br>
+<div class="infra-slider">
+
+
+  <!-- YOUR SLIDER – UNTOUCHED -->
+  <div class="infra-slider">
+    <div class="infra-track" id="infraTrack">
+
+      <div class="infra-slide">
+        <img src="media/9.jpeg" alt="Electronics Lab">
+        <div class="infra-name">Electronics Lab</div>
+      </div>
+
+      <div class="infra-slide">
+        <img src="media/10.jpeg" alt="Computer Lab">
+        <div class="infra-name">Computer Lab</div>
+      </div>
+
+      <div class="infra-slide">
+        <img src="media/11.jpeg" alt="Workshop Area">
+        <div class="infra-name">Institute</div>
+      </div>
+
+      <div class="infra-slide">
+        <img src="media/8.jpeg" alt="Football and Basketball Ground">
+        <div class="infra-name">Football and Basketball Ground</div>
+      </div>
+
+      <div class="infra-slide">
+        <img src="media/hh.jpg" alt="Hotel Management Room">
+        <div class="infra-name">Hotel Management Lab</div>
+      </div>
+
+      <div class="infra-slide">
+        <img src="media/hh2.jpg" alt="Hotel Management Room">
+        <div class="infra-name">Hotel Management Room</div>
+      </div>
+
+      <div class="infra-slide">
+        <img src="media/hh4.jpg" alt="Hotel Management Room">
+        <div class="infra-name">Hotel Management Room</div>
+      </div>
+
+      <div class="infra-slide">
+        <img src="media/hh3.jpg" alt="Hotel Management Room">
+        <div class="infra-name">Hotel Management Room</div>
+      </div>
+
+    </div>
+
+    <button class="infra-btn prev" onclick="moveInfra(-1)">‹</button>
+    <button class="infra-btn next" onclick="moveInfra(1)">›</button>
+  </div>
+
+</section>
+
+  <section class="light">
+    <h3>Student Life & Activities</h3>
+    <div class="grid">
+      <img src="media/11.jpeg" class="gallery-img" alt="Students Ground Activity">
+      <img src="media/studednt.jpg" class="gallery-img" alt="Campus Activity View">
+    </div>
+  </section>
+
+  <section>
+    <h3>360° Virtual Campus View</h3>
+    <div class="viewer-wrapper">
+      <div id="viewer"></div>
+      <p style="text-align:center;margin-top:15px;opacity:0.8">
+        Auto‑moving 360° campus preview
+      </p>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h4>Admissions Open for 2025</h4>
+    <p>Start your journey with us today</p>
+    <button>Apply Now</button>
+  </div>
+  <section class="map-section">
+  <h3 class="section-title">Find Us on Google Maps</h3>
+
+  <div class="map-wrapper">
+    
+    <!-- Map -->
+    <div class="map-card">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d976.0870329824168!2d88.52813205549977!3d27.086592230542763!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e41ec5277f2565%3A0x31e03f0fda97c7ff!2sDon%20Bosco%20Technical%20School!5e0!3m2!1sen!2sin!4v1765288962907!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    
+    <div class="contact-card">
+      <h4>Don Bosco Technical School, Kalimpong</h4>
+
+      <p><strong>📍 Address:</strong><br>
+      14th Mile, Kalimpong – 734301</p>
+
+      <p><strong>📞 Phone:</strong><br>
+      +919593772617</p>
+
+      <p><strong>⏰ Working Hours:</strong><br>
+      Mon – Friday<br>
+      9:00 AM – 4:00 PM</p>
+
+      <a class="direction-btn" target="_blank"
+         href="https://www.google.com/maps/dir/?api=1&destination=Don+Bosco+Technical+School+Kalimpong">
+        📌 Get Directions
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+  <section class="light">
+    <h3>Important Links</h3>
+    <div class="grid">
+      <div class="card"><a href="./admission.html">Admission Form</a></div>
+      <div class="card"><a href="#">Academic Calendar</a></div>
+      <div class="card"><a href="./student.html">Student Portal</a></div>
+      <div class="card"><a href="./contact.html">Contact Administration</a></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Don Bosco Technical School, Kalimpong | All Rights Reserved</p>
+  </footer>
+
+  <!-- 360° Auto‑Moving Viewer (Offline Safe) -->
+   <script>
+  let infraIndex = 0;
+
+  function moveInfra(dir) {
+    const track = document.getElementById("infraTrack");
+    const total = track.children.length;
+    const visible = window.innerWidth <= 768 ? 1 : 3;
+
+    infraIndex += dir;
+
+    if (infraIndex < 0) infraIndex = total - visible;
+    if (infraIndex > total - visible) infraIndex = 0;
+
+    const movePercent = (100 / visible) * infraIndex;
+    track.style.transform = `translateX(-${movePercent}%)`;
+  }
+</script>
+<script>
+function toggleMenu() {
+  document.querySelector("nav").classList.toggle("active");
+}
+</script>
+
+
+  <script>
+    const viewerBox = document.getElementById('viewer');
+    viewerBox.style.background = "url('media/360.jpeg') repeat-x center / cover";
+    let pos = 0;
+    setInterval(() => {
+      pos -= 0.2;
+      viewerBox.style.backgroundPosition = `${pos}px center`;
+    }, 30);
+    
+  </script>
+
+</body>
+</html>

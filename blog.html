@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Blog | Don Bosco Technical Institute Kalimpong</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#e6e6e6;color:#222;}
+
+    /* HEADER */
+    header{
+      position:sticky;top:0;z-index:1000;
+      backdrop-filter:blur(10px);
+      background:rgba(255,255,255,0.85);
+      border-bottom:1px solid rgba(0,0,0,0.1);
+      padding:14px 8%;
+      display:flex;justify-content:space-between;align-items:center;
+    }
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo img{width:46px;height:46px;}
+
+    nav{display:flex;gap:24px;}
+    nav a{
+      text-decoration:none;color:#333;font-weight:500;
+      position:relative;padding:6px 0;
+    }
+    nav a::after{
+      content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
+      background:linear-gradient(90deg,#607d8b,#90a4ae);
+      transition:.3s;
+    }
+    nav a:hover::after{width:100%;}
+
+    /* MOBILE MENU */
+    .menu-icon{font-size:30px;display:none;cursor:pointer;}
+    @media(max-width:768px){
+      .menu-icon{display:block;}
+      nav{
+        display:none;flex-direction:column;gap:18px;
+        position:absolute;top:70px;right:8%;
+        background:#fff;padding:20px;border-radius:12px;
+        box-shadow:0 6px 20px rgba(0,0,0,0.15);
+      }
+      nav.active{display:flex!important;}
+    }
+
+    /* HERO */
+    .hero{
+      height:45vh;
+      background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+      url('media/school.jpg');
+      background-size:cover;background-position:center;
+      display:flex;align-items:center;padding:0 8%;
+      color:#fff;
+    }
+    .hero h2{font-size:42px;}
+    @media(max-width:768px){.hero h2{font-size:30px;}}
+
+    /* BLOG SECTION */
+    section{padding:70px 8%;background:#fff;}
+    h3{text-align:center;font-size:32px;margin-bottom:40px;}
+
+    .blog-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .post-card{
+      background:#fff;border-radius:16px;overflow:hidden;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+      transition:.3s;
+    }
+    .post-card:hover{transform:translateY(-6px);}
+    .post-img{width:100%;height:220px;object-fit:cover;}
+    .post-content{padding:20px;}
+    .post-content h4{margin-bottom:10px;font-size:18px;}
+    .post-content p{opacity:.8;line-height:1.6;margin-bottom:12px;}
+
+    .read-btn{
+      display:inline-block;padding:8px 18px;border-radius:20px;
+      background:#000;color:#fff;text-decoration:none;font-size:14px;
+    }
+
+    footer{
+      background:#222;color:#eee;padding:40px 8%;text-align:center;
+      margin-top:40px;
+    }
+
+    .admin-btn{
+      padding:10px 22px;background:#607d8b;color:#fff;
+      border-radius:25px;text-decoration:none;font-weight:500;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <div class="logo">
+    <img src="media/logo1.png">
+    <h1>Don Bosco Technical Institute</h1>
+  </div>
+
+  <nav>
+    <a href="./index.htm">Home</a>
+    <a href="./about.html">About</a>
+    <a href="./admission.html">Admissions</a>
+    <a href="./blog.html">Blog</a>
+    <a href="./contact.html">Contact</a>
+    <a href="./admin-login.html" class="admin-btn">Admin Login</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h2>School Blog & Updates</h2>
+</div>
+
+<!-- BLOG POSTS -->
+<section>
+  <h3>Latest Announcements & School Activities</h3>
+
+  <div class="blog-grid">
+
+    <!-- SAMPLE POST -->
+    <div class="post-card">
+      <img src="media/studednt.jpg" class="post-img">
+      <div class="post-content">
+        <h4>Annual Sports Day 2025</h4>
+        <p>Students participated in athletics, football, and cultural events. A day full of excitement and talent!</p>
+        <a class="read-btn" href="#">Read More</a>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <img src="media/hh.jpg" class="post-img">
+      <div class="post-content">
+        <h4>Hotel Management Practical</h4>
+        <p>HMC students completed their food production and housekeeping training with exceptional performance.</p>
+        <a class="read-btn" href="#">Read More</a>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <img src="media/11.jpeg" class="post-img">
+      <div class="post-content">
+        <h4>Workshop Training Session</h4>
+        <p>Hands-on technical training conducted for IT and TTC students by experienced instructors.</p>
+        <a class="read-btn" href="#">Read More</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2025 Don Bosco Technical Institute, Kalimpong | All Rights Reserved  
+</footer>
+
+<script>
+function toggleMenu(){
+  document.querySelector("nav").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
